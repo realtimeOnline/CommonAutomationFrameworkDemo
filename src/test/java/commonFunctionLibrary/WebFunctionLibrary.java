@@ -24,9 +24,6 @@ public class WebFunctionLibrary{
 	
 
 	public WebDriver initialize_driver(){
-		System.out.println("BrowserName"+System.getProperty("BrowserName"));
-		System.out.println("Url"+System.getProperty("Url"));
-		System.out.println("TestEnv"+System.getProperty("TestEnv"));
 		browserName=System.getProperty("BrowserName");
 		url=System.getProperty("Url");
 		testEnv=System.getProperty("TestEnv");
