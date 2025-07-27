@@ -32,6 +32,8 @@ pipeline {
             steps {
                 archiveArtifacts artifacts: 'target/surefire-reports/*.html', allowEmptyArchive: true
                 junit 'target/surefire-reports/*.xml'
+                // Allure report generation
+                allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
             }
         }
     }
