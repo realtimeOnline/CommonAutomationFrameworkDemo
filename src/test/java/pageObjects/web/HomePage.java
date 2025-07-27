@@ -6,6 +6,6 @@ public class HomePage {
 
 	public By buttonconfirm= By.xpath("//div[text()='Confirm']");
 	public By linkElectricBikes = By.xpath("//a[text()='Electric Bikes']");
-	public By linkAdventureNeo = By.xpath("//a[text()='Adventure Neo']");
+	public By linkAdventureNeo = By.xpath("//div[@class='nav__secondary']//a[text()='Adventure Neo']");
 
 }
