@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     // Use Maven to build the project with parameters
-                    bat "mvn clean install"
+                    bat "mvn clean install -DBrowserName=%BrowserName% -DUrl=%Url% -DTestEnv=%TestEnv%"
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
             steps {
                 script {
                     // Run tests using Maven with parameters
-                    bat "mvn test"
+                    bat "mvn test -DBrowserName=%BrowserName% -DUrl=%Url% -DTestEnv=%TestEnv%"
                 }
             }
         }
