@@ -37,7 +37,9 @@ public class CannondalePurchaseProduct extends WebFunctionLibrary {
 		jsonDataObj= getTestData("testdata", "OrderDetails", 0);
 		System.out.println((String)jsonDataObj.get("GuestEmail"));		
 		clickAction(homePageObjects.buttonconfirm);
+		Thread.sleep(5000);
 		hover(homePageObjects.linkElectricBikes);
+		Thread.sleep(5000);
 		clickAction(homePageObjects.linkAdventureNeo);		
 
 	}
