@@ -24,7 +24,7 @@ pipeline {
             steps {
                 script {
                     // Run tests using Maven with parameters
-                    bat "mvn test -DBrowserName=%BrowserName% -DUrl=%Url% -DTestEnv=%TestEnv%"
+                    bat "mvn test"
                 }
             }
         }
