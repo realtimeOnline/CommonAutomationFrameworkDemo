@@ -1,0 +1,10 @@
+{
+  "OrderDetails" : [ {
+    "GuestEmail" : "rama.mullamgi@trinet.com",
+    "FirstName" : "Rama",
+    "LastName" : "Mullamgi",
+    "Phone" : "4567834234",
+    "ZipCode" : "90001"    
+  
+  } ] 
+}

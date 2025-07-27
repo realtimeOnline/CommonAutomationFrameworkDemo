@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.example</groupId>
+	<artifactId>CommonAutomationFrameworkDemo</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<aspectj.version>1.9.2</aspectj.version>
+	</properties>
+
+	<dependencies>
+			<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.0.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>2.13.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.27.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>5.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>4.4.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>tech.grasshopper</groupId>
+			<artifactId>extentreports-cucumber7-adapter</artifactId>
+			<version>1.14.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.hynnet</groupId>
+			<artifactId>jacob</artifactId>
+			<version>1.18</version>
+		</dependency>
+		<dependency>
+			<groupId>de.openkeyword</groupId>
+			<artifactId>autoit</artifactId>
+			<version>0.0.15</version>
+		</dependency>
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>9.3.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>17</source>
+					<target>17</target>
+				</configuration>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.20</version>
+				<configuration>
+					<systemPropertyVariables>					
+						<BrowserName>${BrowserName}</BrowserName>
+						<Url>${Url}</Url>
+						<Uri>${Uri}</Uri>
+						<TestEnv>${TestEnv}</TestEnv>
+						<PlatformName>${PlatformName}</PlatformName>
+						<PlatformVersion>${PlatformVersion}</PlatformVersion>
+						<MobileName>${MobileName}</MobileName>
+						<Udid>${Udid}</Udid>
+						<ApplicationType>${ApplicationType}</ApplicationType>
+					</systemPropertyVariables>
+
+					<testFailureIgnore>true</testFailureIgnore>
+					<argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+					<suiteXmlFiles>
+						<suiteXmlFile>WebTestRunner.xml</suiteXmlFile>
+					</suiteXmlFiles>
+
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjweaver</artifactId>
+						<version>${aspectj.version}</version>
+					</dependency>
+
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+</project>
