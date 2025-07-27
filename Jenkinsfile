@@ -15,16 +15,16 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Use Maven to build the project
-                    bat 'mvn clean install'
+                    // Use Maven to build the project with parameters
+                    bat "mvn clean install -DBrowserName=%BrowserName% -DUrl=%Url% -DTestEnv=%TestEnv%"
                 }
             }
         }
         stage('Test') {
             steps {
                 script {
-                    // Run tests using Maven
-                    bat 'mvn test'
+                    // Run tests using Maven with parameters
+                    bat "mvn test -DBrowserName=%BrowserName% -DUrl=%Url% -DTestEnv=%TestEnv%"
                 }
             }
         }
