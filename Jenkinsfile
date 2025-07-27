@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     // Use Maven to build the project with parameters
-                    bat "mvn clean install -DBrowserName=%BrowserName% -DUrl=%Url% -DTestEnv=%TestEnv%"
+                    bat "mvn clean install"
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline {
                 archiveArtifacts artifacts: 'target/surefire-reports/*.html', allowEmptyArchive: true
                 junit 'target/surefire-reports/*.xml'
                 // Allure report generation
-                allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+                allure includeProperties: false, jdk: '', results: [[path: 'target\allure-results']]
             }
         }
     }
