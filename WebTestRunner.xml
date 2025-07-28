@@ -5,5 +5,5 @@
 		<classes>
 			<class name="testScripts.web.CannondalePurchaseProduct" />
 		</classes>
-	</test>
+	</test>	
 </suite>
