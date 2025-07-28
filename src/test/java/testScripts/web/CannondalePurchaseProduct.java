@@ -36,8 +36,11 @@ public class CannondalePurchaseProduct extends WebFunctionLibrary {
 	public void test1234() throws Exception{
 		jsonDataObj= getTestData("testdata", "OrderDetails", 0);
 		clickAction(homePageObjects.buttonconfirm);
+		Thread.sleep(5000);
 		hover(homePageObjects.linkElectricBikes);
-		clickAction(homePageObjects.linkAdventureNeo);		
+		Thread.sleep(5000);
+		clickAction(homePageObjects.linkAdventureNeo);	
+		Thread.sleep(5000);
 
 	}
 
